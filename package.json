@@ -12,6 +12,7 @@
     "applicationinsights": "^1.0.4",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "mysql": "^2.18.1",
     "pug": "^2.0.3",
     "uuid": "^3.3.2"
   },
@@ -22,6 +23,6 @@
     "docker",
     "image"
   ],
-  "author": "Afzaal Ahmad Zeeshan",
+  "author": "Nikhil",
   "license": "MIT"
 }

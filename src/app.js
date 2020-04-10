@@ -3,6 +3,20 @@ let Express = require("express");
 let bodyParser = require("body-parser");
 let app = new Express();
 
+//Db set up
+var mysql = require('mysql');
+console.log("connecting....");
+var con = mysql.createConnection({
+  host: "rm-6gj7na50u7a613tjd.mysql.ap-south-1.rds.aliyuncs.com",
+  user: "newone",
+  password: "Icon#123"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+
 // Configuration
 app.set("view engine", "pug");
 app.set("views", "./src/views");
@@ -25,7 +39,7 @@ app.all("*", function(req, res, next) {
 let homeRouter = require("./routers/home");
 app.use("/", homeRouter);
 
-// Songs API 
+// Songs API
 let songsRouter = require("./routers/api/songs");
 app.use("/api/songs", songsRouter);
 
